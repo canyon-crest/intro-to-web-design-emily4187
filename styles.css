@@ -1,1 +1,165 @@
+body {
+  background-color: rgb(255, 212, 240); 
+  background-image: linear-gradient(180deg, rgb(255, 194, 222), rgb(126, 206, 208));
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+#container{
+    width: 1000px;
+    margin: 50px auto;
+    background-color: rgb(255, 225, 239); /* For browsers that do not support gradients */
+    background-image: linear-gradient(180deg, rgb(255, 214, 233), rgb(191, 254, 255));
+    padding: 60px;
+}
 
+h1 {
+    background-color: #ffd1e9;
+    /* margin is outside of the box, padding is inside of the box */
+    border: solid 3px #ffa6c2; /* solid can be replaced by dashed*/
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    padding: 15px; /* first px is top bottom, second is left and right*/
+    text-align: center;
+    width: 50%;  /*changes the width of the box, so doesn't take up entire screen */
+    margin: 0px auto;
+}
+  
+
+h2 {
+    font-size: 1.3em;
+    text-align: center;
+    font-style: italic;
+    color:#e462a3;
+}
+
+h3 {
+    border-left: 20px groove #ffb6ec;
+    padding: 9px;
+    border-radius: 30px;
+    padding-left: 20px;
+    border-radius: 50px;
+    border-bottom: 2px double rgb(255, 161, 177);
+    width: 180px;
+    background-color: rgb(255, 210, 239);
+}
+
+p {
+    line-height: 1.6em;
+    background-color: #ffc6e0;
+    padding: 15px;
+    border: 5px dotted #ffadde;
+    border-radius: 20px;
+}
+
+img {
+    width:140px;
+    height: 120px;
+    border-radius:15px;
+    border:solid 3px #ffc6ec;
+    float:left;
+    margin: 15px;
+}
+
+li{
+    font-style: italic;
+}
+
+/* Comma Selector*/
+p, li {
+    font-size: 15px;
+}
+
+/* ID RULES*/
+#missionbay{
+    border-color:rgb(237, 175, 184);
+}
+#dance{
+    border-color:rgb(224, 183, 116);
+}
+
+#tokyo{
+    border-color:rgb(161, 237, 227);
+}
+
+#p2{
+    background-color:#daddff;
+    border: 5px dotted #bec3ff;
+}
+
+#p3{
+    background-color: #baf1ff; 
+    border: 5px dotted #95d0de;
+}
+
+#heading3-2{
+    border-left: 20px groove #b7b6ff;
+    padding: 9px;
+    border-radius: 30px;
+    padding-left: 20px;
+    border-radius: 50px;
+    border-bottom: 2px double rgb(166, 161, 255);
+    width: 180px;
+    background-color: rgb(211, 210, 255);
+}
+
+#heading3-3{
+    border-left: 20px groove #b6f2ff;
+    padding: 9px;
+    border-radius: 30px;
+    padding-left: 20px;
+    border-radius: 50px;
+    border-bottom: 2px double rgb(161, 246, 255);
+    width: 180px;
+    background-color: rgb(191, 255, 254);
+}
+
+#sidebar {
+    width: 300px;
+    background: #ffd0eb;
+    border: 2px solid rgb(232, 163, 193);
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 20px; 
+    margin-top: 70px;  
+    box-sizing: border-box;
+    float:right;
+}
+
+#sidebar h3{
+    text-align: center;
+    padding: 5px;
+    margin: 5px auto;
+    margin-top: 10px;
+    background: none;
+    border: 3px dotted rgb(232, 163, 207);
+    width: 150px;
+}
+
+#sidebar li{
+    font-style: italic;
+}
+
+/* CLASS RULE */
+.highlight{
+    background: rgb(255, 247, 204);
+    color: black;
+    padding: 2px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/*PSEUDO SELECTORS */
+a:link{
+    color: rgb(215, 22, 128);
+    font-weight: bold;
+    text-decoration: none;
+}
+a:visited{
+    color: rgb(235, 52, 138);
+}
+a:hover{
+    color: rgb(255, 142, 187);
+    text-decoration: underline;
+}
+a:active{
+    color:rgb(0, 0, 0);
+}
