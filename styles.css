@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255, 212, 240); 
+  background-color: rgb(255, 194, 222); /* For browsers that do not support gradients */
   background-image: linear-gradient(180deg, rgb(255, 194, 222), rgb(126, 206, 208));
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
@@ -8,7 +8,7 @@ body {
     width: 1000px;
     margin: 50px auto;
     background-color: rgb(255, 225, 239); /* For browsers that do not support gradients */
-    background-image: linear-gradient(180deg, rgb(255, 214, 233), rgb(191, 254, 255));
+    background-image: linear-gradient(180deg, rgb(255, 214, 233), rgb(191, 255, 255));
     padding: 60px;
 }
 
@@ -33,30 +33,29 @@ h2 {
 }
 
 h3 {
-    border-left: 20px groove #ffb6ec;
+    border-left: 20px groove #ffa6c2;
     padding: 9px;
     border-radius: 30px;
     padding-left: 20px;
     border-radius: 50px;
-    border-bottom: 2px double rgb(255, 161, 177);
+    border-bottom: 2px double #e462a3;
     width: 180px;
-    background-color: rgb(255, 210, 239);
+    background-color: #ffd1e9;
 }
 
 p {
-    line-height: 1.6em;
-    background-color: #ffc6e0;
+    line-height: 2em;
+    background-color: #ffd1e9;
     padding: 15px;
-    border: 5px dotted #ffadde;
+    border: 5px dotted #ffa6c2;
     border-radius: 20px;
 }
 
 img {
-    width:140px;
-    height: 120px;
-    border-radius:15px;
-    border:solid 3px #ffc6ec;
-    float:left;
+    width: 200px;
+    border-radius: 15px;
+    border:solid 3px #ffa6c2;
+    float: left;
     margin: 15px;
 }
 
@@ -69,70 +68,159 @@ p, li {
     font-size: 15px;
 }
 
+/*footer*/
+.site-footer{
+  background: rgb(0, 203, 207);
+  padding: 24px 16px;
+  margin-top: 32px;
+}
+
+.footer-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* create 3 equal-width columns in the grid */
+  gap: 10px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-col h4{
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color:rgb(0, 100, 100);
+}
+
+.footer-col ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px; /* consistent space between items */
+}
+
+.footer-col ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Social Icons */
+.footer-col .social-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-col .social-list li {
+  margin: 0;
+}
+
+.footer-col .social-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 8px; 
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+
+.footer-col .social-list a:hover,
+.footer-col .social-list a:focus {
+  background: rgb(0, 224, 228);
+  transform: translateY(-2px) scale(1.06); /* move icon up 2px and make it 6% bigger */
+  outline: none;
+}
+
+.footer-col .social-list svg {
+  width: 32px;   /* larger icon size */
+  height: 32px;
+  display: block;
+  color:black;
+  flex-shrink: 0;
+}
+
+/* ID RULES*/
+#footer-name {
+    background-color: rgb(0, 224, 228);
+    padding: 15px;
+    border: 15px solid #63eff9;
+    border-radius: 1px;
+} /*Change footer author box style*/
 
 #missionbay{
-    border-color:rgb(237, 175, 184);
+    border-color:#ffa6c2;
 }
 #dance{
-    border-color:rgb(224, 183, 116);
+    border-color:#d3a6ff;
 }
-
 #tokyo{
-    border-color:rgb(161, 237, 227);
+    border-color: #a6d7ff;
 }
 
 #p2{
-    background-color:#daddff;
-    border: 5px dotted #bec3ff;
+    background-color:#ead1ff;
+    border: 5px dotted #d3a6ff;
 }
 
 #p3{
-    background-color: #baf1ff; 
-    border: 5px dotted #95d0de;
+    background-color: #d1e8ff; 
+    border: 5px dotted #a6d7ff;
 }
 
 #heading3-2{
-    border-left: 20px groove #b7b6ff;
+    border-left: 20px groove #d3a6ff;
     padding: 9px;
     border-radius: 30px;
     padding-left: 20px;
     border-radius: 50px;
-    border-bottom: 2px double rgb(166, 161, 255);
+    border-bottom: 2px double #ac62e4;
     width: 180px;
-    background-color: rgb(211, 210, 255);
+    background-color: #ead1ff;
 }
 
 #heading3-3{
-    border-left: 20px groove #b6f2ff;
+    border-left: 20px groove #a6d7ff;
     padding: 9px;
     border-radius: 30px;
     padding-left: 20px;
     border-radius: 50px;
-    border-bottom: 2px double rgb(161, 246, 255);
+    border-bottom: 2px double #62bbe4;
     width: 180px;
-    background-color: rgb(191, 255, 254);
+    background-color: #d1e8ff;
+}
+
+#main-content {
+  display: flex;
+  flex-wrap: wrap; /* allow sidebar + content to stack on smaller screens */
+  align-items: flex-start;
 }
 
 #sidebar {
-    width: 300px;
-    background: #ffd0eb;
-    border: 2px solid rgb(232, 163, 193);
-    border-radius: 10px;
+    background: #ffd1e9;
+    border: 5px double #e462a3;
     padding: 15px;
-    margin-right: 20px; 
-    margin-top: 75px;  
+    margin-right: 40px; 
+    margin-top: 0px;  
     box-sizing: border-box;
-    float:right;
+    flex: 0 0 250px; /* fixed width for sidebar */
+}
+
+#content-tabs {
+  flex: 1;
 }
 
 #sidebar h3{
     text-align: center;
     padding: 5px;
     margin: 5px auto;
-    margin-top: 10px;
+    margin-top: 5px;
     background: none;
-    border: 3px dotted rgb(232, 163, 207);
-    width: 150px;
+    border: 3px dotted #e462a3;
 }
 
 #sidebar li{
@@ -148,26 +236,147 @@ p, li {
     font-weight: bold;
 }
 
+/* Container for image + overlay */
+.img-container {
+    position: relative;          /* allows overlay to sit on top */
+    margin: 15px;
+    float: left;
+    width: 200px;           
+    border-radius: 15px;       
+    line-height: 0;
+    outline: none;
+}
+
+.img-container img {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0;
+    border-radius: 15px;
+    border: 3px solid rgba(0, 204, 207);
+    box-sizing: border-box; /* ensures border stays inside width */
+}
+
+/* The overlay */
+.img-container .fade-overlay {
+    position: absolute;
+    inset: 0;                    /* top:0; right:0; bottom:0; left:0 */
+    background-color: rgba(0, 203, 207, 0.55); /* semi-transparent overlay */
+    opacity: 0;                  
+    border-radius: 15px;         /* matches image */
+    transition: opacity 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;    
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 204, 207);  
+}
+
+/* Text inside overlay */
+.img-container .fade-text {
+    color: white;
+    font-size: 14px;
+    line-height: 1.2em;
+    padding: 5px;
+    pointer-events: none;        
+}
+
+/* Show overlay when hovering over container */
+.img-container:hover .fade-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* CSS-only TABS: hide radios, show panels when respective radio is checked */
+.tabs input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tabs .tab-panel { 
+    display: none; 
+}
+
+/* show matching panel */
+#radio-aboutme:checked ~ #panel-aboutme,
+#radio-hobbies:checked ~ #panel-hobbies,
+#radio-place:checked ~ #panel-place {
+    display: block;
+}
+
+/*labels receive focus outline like buttons */
+.tab-button { 
+    cursor: pointer; 
+}
+.tab-button:focus { 
+    outline: 3px solid rgba(255,227,124,0.35); 
+    outline-offset: 2px; 
+}
+
+/* show selected state visually by styling the checked radio's label */
+#radio-aboutme:checked ~ .tab-list label[for="radio-aboutme"],
+#radio-hobbies:checked ~ .tab-list label[for="radio-hobbies"],
+#radio-place:checked ~ .tab-list label[for="radio-place"] {
+    background: rgb(215, 22, 128);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/*Styling for Tabs: match site font + color scheme */
+.tab-list{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.tab-button{
+  font-family: inherit;               
+  color: rgb(0, 0, 0);                        
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.511);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.12s ease;
+}
+
+/* subtle hover */
+.tab-button:hover{
+  background: rgba(255, 255, 255, 0.4);
+  color: rgb(215, 22, 128);
+}
+
+/* selected */
+.tab-button[aria-selected="true"],
+.tab-button:focus{
+  background: rgb(215, 22, 128); 
+  color: rgb(255, 255, 255);                
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.06);
+}
+
 /*PSEUDO SELECTORS */
 a:link{
-    color: rgb(215, 22, 128);
+    color: rgba(215, 22, 128, 0.916);
     font-weight: bold;
     text-decoration: none;
 }
 a:visited{
-    color: rgb(235, 52, 138);
+    color: rgba(215, 22, 128, 0.721);
 }
 a:hover{
-    color: rgb(255, 142, 187);
+    color: rgb(215, 22, 128);
     text-decoration: underline;
 }
 a:active{
     color:rgb(0, 0, 0);
-}
-
-img:hover{
-    border-color:#000000;
-    box-shadow:0.5px 0.5px 5px rgb(156, 156, 156);
 }
 
 /*MEDIA QUERIES*/
@@ -180,42 +389,45 @@ img:hover{
     #container{
         width: 90%;
         margin: 50px auto; 
-        padding:20px;
+        padding: 20px;
     }
 
     p{
         padding: 20px;
-        margin: 15px 0;
+        margin: 15px 0px;
     }
 
     h2{
-        margin: 25px 0 10px; 
+        margin: 25px 0px 10px; 
     }
 
     h3{
-        margin: 20px 0 10px;
+        margin: 20px 0px 10px;
         padding-left: 20px;
     }
 }
-@media (max-width:768px){
+
+@media (max-width: 768px){
+    
     /* Hide sidebar */
     #sidebar {
         display: none;
     }
+
     body {
-        margin:0;
+        margin: 0;
         padding: 4px;
     }
 
     #container {
         width: 90%;
         margin: 0 auto;
-        padding: 5px;
+        padding: 15px;
     }
 
     /* headings and paragraphs*/
     p {
-        padding: 8px;
+        padding: 10px;
         margin: 0 auto;
     }
 
@@ -227,12 +439,20 @@ img:hover{
         margin: 20px 0 10px;
     }
 
-    img {
+    img, #dance, #tokyo, #missionbay {
         float: none;
         width: 100%; /* have full width */
         max-width: 100%; /* prevent overflow */
         margin: 0 auto;
         padding: 8px;
     }
-
+    
+    .img-container .fade-text {
+        font-size: 16px;
+    }
+    
+    /* Hide footer completely */
+    footer, .site-footer, #footer {
+        display: none !important;
+    }
 }

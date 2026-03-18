@@ -3,6 +3,7 @@
   <head>
     <title>Emily Chen - About Me</title>
     <link rel="stylesheet" href="styles.css">  
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
   </head>
   
   <body>
@@ -20,21 +21,118 @@
             <li>Grade: Sophomore</li>
             <li>Sibling: Andrew</li>
           </ul>
+          <h3>Favorites</h3>
+          <ul>
+            <li>Color: Lavender</li>
+            <li>Food: Sushi</li>
+            <li>Hobby: Dance</li>
+            <li>Season: Spring</li>
+            <li>Holiday: Christmas</li>
+          </ul>
         </div>
 
-        <h3>About Me</h3>
-          <img src="images/missionbay.webp" id="missionbay" alt="Mission Bay Image">
+        <!-- Tabs container (all JS removed; CSS-only radios + labels drive which panel is visible) -->
+        <div class="tabs" id="content-tabs"> 
+           <!-- radios control state -->
+          <input type="radio" name="content-tabs" id="radio-aboutme" checked>
+          <input type="radio" name="content-tabs" id="radio-hobbies">
+          <input type="radio" name="content-tabs" id="radio-place">
+
+          <!-- tab list (labels act as tab buttons) -->
+          <div role="tablist" aria-label="Content tabs" class="tab-list">
+            <label role="tab" class="tab-button" for="radio-aboutme" id="label-aboutme" aria-controls="panel-aboutme">About Me</label>
+            <label role="tab" class="tab-button" for="radio-hobbies" id="label-hobbies" aria-controls="panel-hobbies">Favorite Hobbies</label>
+            <label role="tab" class="tab-button" for="radio-place" id="label-place" aria-controls="panel-place">Favorite Place</label>
+          </div>
+
+        <!-- all the panel sections are placed inside the .tabs container so that the CSS radio buttons can show and hide the correct panel -->        <!-- panel: About Me -->
+        <section id="panel-aboutme" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="label-aboutme">
+          <h3>About Me</h3>
+          <div class="img-container">
+            <img src="images/missionbay.webp" id="missionbay" alt="Mission Bay Image">
+            <div class="fade-overlay">
+              <span class="fade-text">One of my favorite places: Mission Bay!</span>
+            </div>
+          </div>
           <p>I was born and raised in sunny San Diego, California. I have an <span class="highlight"> older brother who is two years older</span> than me, and growing up with him has been a big part of my life. Whether we were competing in games or supporting each other, he has always been someone I can rely on. I am very close with my family, and they have always encouraged me to work hard and follow my interests. I also value my friendships a lot, and my friends are an important part of my life. One of my favorite places in San Diego is <a href="https://www.google.com/search?q=mission+bay" target="_blank">Mission Bay Beach</a>, where I enjoy spending time outside with my family and relaxing near the water.</p>
+        </section>
         
+        <!-- panel 2: Favorite Hobbies -->
+        <section id="panel-hobbies" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="label-hobbies">
           <h3 id="heading3-2">My Hobbies</h3>
-          <img src="images/dance.png" id="dance" alt="Hobbies Image">
+          <div class="img-container">
+            <img src="images/dance.png" id="dance" alt="Hobbies Image">
+             <div class="fade-overlay">
+              <span class="fade-text">Dance Photoshoot at the Sand Dunes!</span>
+            </div>
+          </div>
           <p id="p2">My life is filled with a variety of creative and physical hobbies I have pursued for many years. For over a decade, I have expressed myself through <a href="https://forging-sepia-unicorn-601.vscodeedu.app/index.html" target="_blank">dance</a>, which keeps me active and allows me to express myself through movement. Alongside this, I have spent the last seven years playing table tennis, which has taught me strategy and focus. <span class="highlight">Music is also a major part of my life,</span> as I have dedicated eleven years to playing the piano and two years to playing the flute, allowing me to explore my creativity through rhythm and melody. When I am not practicing, I often enjoy reading, which allows me to relax and explore new perspectives. Finally, I like to spend my quiet moments writing, using words to capture ideas and my personal experiences.</p>
-        
+        </section>
+
+        <!-- panel 3: Favorite Place -->
+        <section id="panel-place" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="label-place">
           <h3 id="heading3-3">Favorite Place</h3>
-          <img src="images/tokyo.webp" id="tokyo" alt="Tokyo Image">
+          <div class="img-container">
+            <img src="images/tokyo.png" id="tokyo" alt="Tokyo Image">
+              <div class="fade-overlay">
+                <span class="fade-text">Tokyo: My Favorite Vacation Spot!</span>
+            </div>
+          </div>
           <p id="p3"><span class="highlight">One of my favorite places to visit with my family is Japan.</span> I love exploring the busy streets of <a href="https://www.japan.travel/en/destinations/kanto/tokyo/" target="_blank" >Tokyo</a>, seeing colorful shops, and eating some of my favorite foods like sushi, ramen, and matcha desserts. I also remember visiting beautiful gardens, temples, and fun cafes with my family, as we walked around the neighborhoods and enjoyed all the sights that the city had to offer. Walking through the streets and trying new activities was both exciting and relaxing, and it gave me a chance to learn more about Japanese culture. Experiencing Tokyo and enjoying the foods and places I love make the trip memorable. To me, our trips to Japan are always unforgettable because it combines amazing food, fun activities, and quality time with my family.</p>
-      
+        </section>
       </div>
+      
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Author</h4>
+          <p id="footer-name"> Emily Chen - Canyon Crest Academy</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Social</h4>
+          <ul class="social-list">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                <!-- Instagram -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <path d="M16 11.37a4 4 0 1 1-7.99.63 4 4 0 0 1 7.99-.63z"></path>
+                  <circle cx="17.5" cy="6.5" r="0.5"></circle>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+                <!-- Facebook -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h2V2z"></path>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://mail.google.com/" target="_blank" rel="noopener" aria-label="Gmail">
+                <!-- Mail -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="M22 6l-10 7L2 6"></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Facts</h4>
+          <ul>
+            <li>CCA Address: 5951 Village Center Loop Rd, San Diego, CA 92130</li>
+            <li>CCA Phone Number: (858) 350-0253</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     </div>
   </body>
 </html>
