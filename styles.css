@@ -22,6 +22,8 @@ h1 {
     text-align: center;
     width: 50%;  /*changes the width of the box, so doesn't take up entire screen */
     margin: 0px auto;
+    position: relative;  
+    overflow: hidden;    
 }
   
 
@@ -52,7 +54,8 @@ p {
 }
 
 img {
-    width: 200px;
+    width: 40%;
+    max-width:200px;
     border-radius: 15px;
     border:solid 3px #ffa6c2;
     float: left;
@@ -148,7 +151,7 @@ p, li {
 #footer-name {
     background-color: rgb(0, 224, 228);
     padding: 15px;
-    border: 15px solid #63eff9;
+    border: 2px solid rgb(0, 100, 100);
     border-radius: 1px;
 } /*Change footer author box style*/
 
@@ -205,7 +208,7 @@ p, li {
     border: 5px double #e462a3;
     padding: 15px;
     margin-right: 40px; 
-    margin-top: 0px;  
+    margin-top: 10px;  
     box-sizing: border-box;
     flex: 0 0 250px; /* fixed width for sidebar */
 }
@@ -218,7 +221,7 @@ p, li {
     text-align: center;
     padding: 5px;
     margin: 5px auto;
-    margin-top: 5px;
+    margin-top: 10px;
     background: none;
     border: 3px dotted #e462a3;
 }
@@ -362,6 +365,84 @@ p, li {
   border-color: rgba(0,0,0,0.06);
 }
 
+/* Side Notes */
+#notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin:10px auto;
+}
+
+#note-container {
+  width: 200px;
+  height: 100px;
+  perspective: 1000px; /* Essential for the 3D depth effect */
+  margin: 10px;
+  margin-top:5px;
+  margin-right: 40px;
+}
+
+/* flipping card */
+#note-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /* Tells child elements to remain in 3D space */
+  cursor: pointer;
+}
+
+/* hovering to flip the card */
+#note-container:hover #note-card {
+  transform: rotateY(180deg);
+}
+
+/* styles */
+#note-front, #note-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* back side hidden when flipped */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+#note-front {
+  background-color: rgb(186, 254, 255);
+  color: rgb(0, 100, 100); 
+  border: 3px solid rgb(142, 234, 235);
+}
+
+#note-back {
+  background-color: rgb(215, 22, 128); 
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+#note-front h3 {
+    font-size: 20px;       
+    text-align: center;  
+    background-color: inherit;
+    border:none;
+}
+
+#note-back h3 {
+    font-size: 15px;       
+    text-align: center;   
+    background-color: inherit;
+    border:none;
+}
+
 /*PSEUDO SELECTORS */
 a:link{
     color: rgba(215, 22, 128, 0.916);
@@ -379,8 +460,125 @@ a:active{
     color:rgb(0, 0, 0);
 }
 
+/* Toggle switch position */
+#toggle {
+    display: none; /* hide actual checkbox */
+}
+
+.toggle-label {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 26px;
+    background: #ffa6c2;
+    border-radius: 26px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* When checked, move the knob and change background */
+#toggle:checked + .toggle-label {
+    background: #e462a3;
+}
+
+#toggle:checked + .toggle-label::after {
+    transform: translateX(24px);
+}
+
+/* Dark mode using checkbox */
+
+#toggle:checked ~ #container {
+    background-color: #e462a3;
+    background-image: none;
+    color: #eee;
+}
+
+#toggle:checked ~ #container h1,
+#toggle:checked ~ #container h3 {
+  background-color: #333;
+  color: #fff;
+  border-color: #e462a3;
+}
+
+#toggle:checked ~ #container h2 {
+  color: #fff;
+  border-color: #e462a3;
+}
+
+#toggle:checked ~ #container p {
+    background-color: #333;
+    border-color: #000000;
+    color: #eee;
+}
+
+#toggle:checked ~ #container #sidebar {
+    background-color: #333;
+    border-color: #ff79a6;
+    color: #eee;
+}
+
+#toggle:checked ~ #container #notes #note-front {
+    background-color: #333;   
+    color: #eee;              /* light text */
+    border-color: #555;      
+}
+
+#toggle:checked ~ #container #notes #note-back {
+    background-color: #333;   
+    color: #fff;              /* light text */
+    border-color: #555;      
+}
+
+#toggle:checked ~ #container .site-footer {
+    background-color: #222;      
+}
+#toggle:checked ~ #container .site-footer h4,
+#toggle:checked ~ #container .site-footer p,
+#toggle:checked ~ #container .site-footer li {
+    color: #fff;              /* bright text for all footer headings, paragraphs, list items */
+}
+
+/* Dark mode for footer social icons */
+#toggle:checked ~ #container .site-footer .social-list a svg {
+    color: #ffd1e9; /* light/pastel color for visibility */
+    stroke: #ffd1e9; /* ensures the lines of the icon are bright too */
+}
+
+
+#toggle:checked ~ #container .site-footer .social-list a:hover,
+#toggle:checked ~ #container .site-footer .social-list a:focus {
+    background: #444;    /* slightly lighter background on hover */
+    transform: translateY(-2px) scale(1.06);
+    color: #ff9ee9;      /* bright hover color */
+    stroke: #ff9ee9;
+}
+
+/* change links in dark mode */
+#toggle:checked ~ #container a:link,
+#toggle:checked ~ #container a:visited {
+    color: #ffa6c2;
+}
+#toggle:checked ~ #container a:hover {
+    color: #ff79a6;
+}
+
+
 /*MEDIA QUERIES*/
-@media (max-width:1200px){
+@media (max-width: 1200px){
     #container{
         width:800px;
     }
